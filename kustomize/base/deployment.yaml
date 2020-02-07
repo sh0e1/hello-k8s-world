@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-k8s-world-deployment
+  labels:
+    app: hello-k8s-world
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-k8s-world
+  template:
+    metadata:
+      labels:
+        app: hello-k8s-world
+    spec:
+      containers:
+      - name: hello-k8s-world
+        image: gcr.io/playground-265014/hello-k8s-world:v0.1.0
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: regcred

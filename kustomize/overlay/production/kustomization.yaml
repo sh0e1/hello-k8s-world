@@ -1,0 +1,9 @@
+namePrefix: production-
+commonLabels:
+  env: production
+commonAnnotations:
+  note: Hello, I am production!
+resources:
+- ../../base
+patchesStrategicMerge:
+- deployment.yaml
