@@ -4,7 +4,8 @@ LABEL maintainer="sh0e1 <sh0e1@users.noreply.github.com>"
 WORKDIR /go/src/app
 COPY . .
 
-RUN CGO_ENABLED=0 GOOS=linux go build -v -o app
+ARG version
+RUN CGO_ENABLED=0 GOOS=linux go build -ldflags "-X main.version=$version" -v -o app
 
 FROM alpine
 RUN apk add --no-cache ca-certificates
