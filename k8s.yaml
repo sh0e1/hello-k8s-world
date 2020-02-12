@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: hello-k8s-world
-        image: gcr.io/playground-265014/hello-k8s-world:latest
+        image: gcr.io/playground-265014/hello-k8s-world
         ports:
         - containerPort: 8080
 ---
