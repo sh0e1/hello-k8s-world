@@ -16,11 +16,9 @@ spec:
     spec:
       containers:
       - name: hello-k8s-world
-        image: gcr.io/playground-265014/hello-k8s-world:v0.1.0
+        image: gcr.io/playground-265014/hello-k8s-world:latest
         ports:
         - containerPort: 8080
-      imagePullSecrets:
-      - name: regcred
 ---
 apiVersion: v1
 kind: Service
