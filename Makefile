@@ -9,3 +9,8 @@ docker/run:
 
 docker/push:
 	docker push $(IMAGE):$(VERSION)
+
+ENV=staging
+
+kustomize/build:
+	kustomize build kustomize/overlay/$(ENV)
